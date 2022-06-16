@@ -24,7 +24,24 @@ package com.qa.result;
 	
 	public void Method2() {
 		this.percentage = (total * 100) /450;
+		
+		if (this.Physics <90 && this.Chemistry<90 && this.Biology<90) {
+			System.out.println(this.percentage);
+			System.out.println("Sorry, you failed three subjects");
+		}
+		else if  ((this.Physics < 90 && this.Chemistry < 90) || (this.Physics < 90 && this.Biology < 90) || (this.Chemistry<90 && this.Biology<90)) {
+			System.out.println(this.percentage);
+			System.out.println("Sorry, you failed two subjects");
+		
+					
+		}else if (this.percentage < 60 || this.Physics < 90 || this.Chemistry < 90 || this.Biology < 90) {
+			System.out.println(this.percentage);
+			System.out.println("Sorry, you failed one subject");
+			
+		 }else {
 		System.out.println(this.percentage);
+		System.out.println("Congratulations! You passed!");
 	}
-	
-}
+	}
+ }
+ 
