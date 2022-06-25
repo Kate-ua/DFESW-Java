@@ -5,46 +5,66 @@ import java.util.Scanner;
 public class Calculator {
 
 	public void calculation() {
-		Scanner scan = new Scanner(System.in);
+		
+		Scanner scan = new Scanner(System.in); 
+			
+			boolean flag = true;
 
-		boolean flag = true;
+			while (flag) {
+				System.out.println("Please enter a number: ");
+				float numOne = scan.nextFloat();
 
-		while (flag) {
-			System.out.println("Please enter a number: ");
-			int numOne = scan.nextInt();
+				System.out.println("Please enter another number: ");
+				float numTwo = scan.nextFloat();
 
-			System.out.println("Please enter another number: ");
-			int numTwo = scan.nextInt();
+				scan.nextLine();
 
-			scan.nextLine();
+				System.out.println(
+						"For addition press +, for substruction press - , for division press / , for multiplication press * ");
 
-			System.out.println(
-					"What calculation method would you like to performe? Addition, substruction, division, multiplication");
+				String choice = scan.nextLine();
 
-			String choice = scan.nextLine();
+				if (choice.equalsIgnoreCase("+")) {
+					System.out.println(numOne + numTwo);
 
-			if (choice.equalsIgnoreCase("addition")) {
-				System.out.println(numOne + numTwo);
+				} else if (choice.equalsIgnoreCase("-")) {
+					System.out.println(numOne - numTwo);
 
-			} else if (choice.equalsIgnoreCase("substruction")) {
-				System.out.println(numOne - numTwo);
+				} else if (choice.equalsIgnoreCase("*")) {
+					System.out.println(numOne * numTwo);
 
-			} else if (choice.equalsIgnoreCase("multiplication")) {
-				System.out.println(numOne * numTwo);
+				} else if (choice.equalsIgnoreCase("/")) {
 
-			} else if (choice.equalsIgnoreCase("division")) {
+					if (numTwo != 0) {
+						System.out.println(numOne / numTwo);
+					} else {
+						System.out.println("Devision can not be performed");
+					}
 
-				if (numTwo!=0) {
-					System.out.println(numOne / numTwo);
 				} else {
-					System.out.println("Devision can not be performed");
+					System.out.println("Bad choice");
+									
 				}
 
-			} else {
-				System.out.println("Bad choice");
+				System.out.println("Do you want to continue? Yes/No");
+
+				String choice2 = scan.nextLine();
+
+				if (choice2.equalsIgnoreCase("yes")) {
+					continue;
+				} else if (choice2.equalsIgnoreCase("no")) {
+					System.out.println("Calculation is over");
+					flag = false;
+					continue;
+
+				} else {
+					flag = false;
+					System.out.println("Bad choice! Start all over");
+
+				}
 			}
 		}
 
 	}
 
-}
+
