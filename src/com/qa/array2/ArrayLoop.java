@@ -9,7 +9,7 @@ public class ArrayLoop {
 	public static void method2() {
 		int[] values = new int[10];
 		for (int i = 0; i < values.length; i++) {
-			values[i] = i + 2;
+			values[i] = i+2;
 			System.out.println(values[i]);
 
 		}
